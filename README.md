@@ -3,7 +3,7 @@
 ![](https://i.postimg.cc/Nfq5rY5b/Screenshot-2026-02-13-at-19-32-44-Cubelytics.png)
 
 
-**Cubelytics** - Minecraft player OSINT tool search a username or UUID and get aggregated profile data from **24 sources** in real time.
+**Cubelytics** - Minecraft player OSINT tool. Search a username or UUID and get profile data from **24 sources** in real time.
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue)
 ![Flask](https://img.shields.io/badge/flask-server-green)
