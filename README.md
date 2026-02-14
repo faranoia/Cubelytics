@@ -97,6 +97,13 @@ Open [http://localhost:5000](http://localhost:5000) in your browser.
 | `beautifulsoup4` | HTML parsing |
 | `tls_client` | TLS fingerprint spoofing (NameMC Cloudflare bypass) |
 
+## Have New Websites or Endpoints?
+
+Found a new Minecraft-related website or API for players look-up?
+You can help expand Cubelytics 
+* Submit at Discord: faranoia
+* Or open an Issue 
+
 ## License
 
 MIT
