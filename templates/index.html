@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubelytics</title>
+    <meta name="description" content="Look up Minecraft player stats across multiple sources.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1 class="logo">Cubelytics</h1>
+            <p class="subtitle">Minecraft Player Intelligence</p>
+        </header>
+        <div class="search-container">
+            <form class="search-box" id="searchForm">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                <input type="text" class="search-input" id="searchInput" placeholder="UUID or Username…"
+                    autocomplete="off" autofocus>
+                <button type="submit" class="search-btn" id="searchBtn">Search</button>
+            </form>
+        </div>
+
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-label">
+                <span class="progress-label-text" id="progressText">Resolving player…</span>
+                <span class="progress-label-count" id="progressCount">0 / 24</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="error-msg" id="errorMsg"></div>
+
+        <div class="results-area" id="results">
+            <div class="player-header">
+                <img class="player-skin" id="playerSkin" alt="Player skin">
+                <div class="player-meta">
+                    <div class="player-name-row">
+                        <h2 id="playerName"></h2>
+                        <span class="platform-badge" id="platformBadge"></span>
+                    </div>
+                    <span class="player-uuid" id="playerUUID"></span>
+                </div>
+            </div>
+
+            <div class="results-layout">
+                <aside class="sidebar" id="sidebar">
+                    <div class="sidebar-title">Sources</div>
+                    <ul class="nav-list" id="navList"></ul>
+                </aside>
+                <div class="sources-grid" id="sourcesGrid"></div>
+            </div>
+        </div>
+
+        <footer class="footer">Cubelytics &mdash; aggregating data from 24 sources</footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>
