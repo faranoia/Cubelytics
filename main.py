@@ -1,6 +1,7 @@
 import json
 import queue
 import threading
+import os
 
 from flask import Flask, render_template, request, jsonify, Response
 
@@ -51,15 +52,15 @@ _clients = {
     "manacube.com":        (ManaCubeClient(),        "uuid"),
     "mcbrawl.com":         (MCBrawlClient(),         "username"),
     "extremecraft.net":    (ExtremeCraftClient(),    "username"),
-    "cavepvp.com":         (CavePvPClient(),        "username"),
+    "cavepvp.com":         (CavePvPClient(),         "username"),
     "wynncraft.com":       (WynncraftClient(),       "uuid"),
     "leonemc.net":         (LeoneMCClient(),         "username"),
     "donutstats.net":      (DonutStatsClient(),      "username"),
-    "laby.net":            (LabyNetClient(),          "username"),
-    "namemc.com":          (NameMCClient(),           "username"),
-    "crafty.gg":           (CraftyGGClient(),         "username"),
-    "paletiers.xyz":       (PaleTiersClient(),        "username"),
-    "subtiers.net":        (SubTiersClient(),         "uuid"),
+    "laby.net":            (LabyNetClient(),         "username"),
+    "namemc.com":          (NameMCClient(),          "username"),
+    "crafty.gg":           (CraftyGGClient(),        "username"),
+    "paletiers.xyz":       (PaleTiersClient(),       "username"),
+    "subtiers.net":        (SubTiersClient(),        "uuid"),
 }
 
 
@@ -171,4 +172,6 @@ def _sse(obj: dict) -> str:
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    # Use Render's assigned PORT or fallback to 5000
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
